@@ -35,37 +35,54 @@ function draw() {
   background('#ffffff');
   
 
-  var count = 0;
-  while(count <= 300){
-  	count = count + 30;
-  	fill(255,0,0);
+  var countX = 0;
+  var countY = 0;
+  var index = 0;
+  fill("#FCA311");
 
-  	if(state == 'Today'){
-	  	if(count <150){
-	  		fill(0,255,0);
-	  	}
-	 }else if(state == '2017'){
-	 	if(count <50){
-	  		fill(0,255,0);
-	  	}
-	 }
-  	ellipse(count, 50, 25,25);
-  	ellipse(count, 80, 25,25);
-  	ellipse(count, 110, 25,25);
-  	ellipse(count, 140, 25,25);
-  	if(state == 'Today'){
-	  	if(count < 180){
-	  		fill(0,255,0);
-	  	}
-  	}
-  	fill(255,0,0);
+  while(countX < 10){
+	countY = 0;
+	while(countY < 8){
+		index = index + 1;
+	 	countY = countY + 1;
+	 	if(state == "Today"){
+	 		if(index > 74){
+	 			fill("#81B29A");
+	 		}
+	 	}else if(state == "2017"){
+	 		if(index > 0 && index < 15){
+	 			fill("#FF6A5C");
 
-  	ellipse(count, 170, 25,25);
-  	ellipse(count, 200, 25,25);
-  	ellipse(count, 230, 25,25);
-  	ellipse(count, 260, 25,25);
+	 		}else if(index >= 15 && index <= 74){
+	 			fill("#FCA311");
+	 		}else if(index > 74){
+	 			fill("#81B29A");
 
-  }
+	 		}
+	 	}else if(state == "2018"){
+	 		if(index > 0 && index < 28){
+	 			fill("#FF6A5C");
+
+	 		}else if(index >= 28 && index <= 74){
+	 			fill("#FCA311");
+	 		}else if(index > 74){
+	 			fill("#81B29A");
+
+	 		}
+	 	}else if(state == "2019"){
+	 		if(index > 0 && index <= 74){
+	 			fill("#FF6A5C");
+	 		}else if(index > 74){
+	 			fill("#81B29A");
+
+	 		}
+	 	}
+		ellipse(countX*30 + 15, countY*30, 25, 25);
+	}
+	countX = countX + 1;
+}
+	
+
   
   
 
