@@ -128,16 +128,23 @@
 
 }
 #have {
-	color:  #FF6A5C;
+	color:  #81B29A;
 }
 #lost {
 	color: #FF9B42;
 }
 #other {
-	color: #81B29A;
+	color: #FF6A5C;
 }
 #names {
 	text-align: center;
 
+}
+
+#l19{
+color: #81009A
+}
+.people{
+  font-weight:bold; 
 }
 

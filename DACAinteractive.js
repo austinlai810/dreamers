@@ -1,4 +1,4 @@
-var state = '2017';
+var state = 'total';
 var myIndex = 0;
 carousel();
 
@@ -16,6 +16,11 @@ function carousel() {
     setTimeout(carousel, 3000); // Change image every 2 seconds
 }
 
+
+function totalfunction() {
+    document.getElementById("button").innerHTML = "We have found statistics based on everyday actions and things that affect everyday people as a way of making these numbers more relatable. The meaning of this is to help with comparing the numbers and to see the severity of what Trump is doing.";
+    state = 'total'
+}
 
 
 
@@ -40,7 +45,7 @@ function nineteenfunction() {
 }
 
 var scaleValue = 1;
-var canvasMax = 360;
+var canvasMax = 390;
 
 
 function setup() {
@@ -59,43 +64,44 @@ function draw() {
     var countX = 0;
     var countY = 0;
     var index = 0;
-    var tota2017 = 10;
-    var tota2018 = 10;
-    var tota2019 = 10;
-
+    var total2017 = 19;
+    var total2018 = 54;
+    var total2019 = 66;
+    var radius = 30;
+    var maxX = 12;
+    var maxY = 12;
+    noStroke();
     fill("#FCA311");
 
-    while (countX < 11) {
+    while (countX < maxX) {
         countY = 0;
-        while (countY < 7) {
+        while (countY < maxY) {
             index = index + 1;
             countY = countY + 1;
             if (state == "2017") {
-                if (index >10) {
+                if (index >total2017) {
                     fill("#81B29A");
                 }
             } else if (state == "2018") {
-                if (index > 0 && index < 15) {
-                    fill("#FF6A5C");
-
-                } else if (index >= 15 && index <= 74) {
+                if (index > 0 && index < total2017) {
                     fill("#FCA311");
-                } else if (index > 74) {
+                } else if (index > total2017 && index <= total2018) {
+                    fill("#FF6A5C");
+                } else if (index > total2018) {
                     fill("#81B29A");
-
                 }
             } else if (state == "2019") {
-                if (index > 0 && index < 28) {
-                    fill("#FF6A5C");
-
-                } else if (index >= 28 && index <= 74) {
+                if (index > 0 && index < total2017) {
                     fill("#FCA311");
-                } else if (index > 74) {
-                    fill("#81B29A");
-
+                } else if (index > total2017 && index <= total2018) {
+                    fill("#FF6A5C");
+                } else if (index > total2018) {
+                    fill("#81009A");
                 }
+            }else if (state == "total") {
+                    fill("#81B29A");
             }
-            ellipse(countX * 30 + 15, countY * 30, 25, 25);
+            ellipse(countX * radius + radius/2, countY * radius , radius, radius);
         }
         countX = countX + 1;
     }
